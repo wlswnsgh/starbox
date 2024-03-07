@@ -49,8 +49,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 
-<link rel="stylesheet" href="css/main.css">
 
+  <!-- main.css -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- SWIPER CSS -->
+  <link
+  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- SWIPER JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    
 </head>
 <body>
   <!-- HEADER -->
@@ -83,11 +97,164 @@
         
         <!-- 검색영역 -->
         <div class="search">
-        <input type="text">
+        <input type="text" >
         <span class="material-icons">search</span>
+        
         </div>
       </div>
+        <!-- 서브 메뉴(해더 오른쪽 상단) -->
+          <ul class="main-menu">
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">COFFEE</a>
+              <div class="item___contents">
+                <ul class="inner">
+                  <li>
+                    <h4>커피</h4>
+                    <ul>
+                      <li>스타벅스 원두</li>
+                      <li>스타벅스 비아</li>
+                      <li>스타벅스 오리가미</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+  
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">MENU</a>
+              <div class="item___contents">
+                <ul class="inner">
+                <li>
+                  <h4>에스프레소 음료</h4>
+                  <ul>
+                    <li>도피오</li>
+                    <li>에스프레소마키아또</li>
+                    <li>아메리카노</li>
+                  </ul>
+                </li>
+              </ul>
+              </div>
+            </li>
+  
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">STORE</a>
+              <div class="item___contents">
+                <ul class="inner">
+                <li>
+                  <h4>에스프레소 음료</h4>
+                  <ul>
+                    <li>도피오</li>
+                    <li>에스프레소마키아또</li>
+                    <li>아메리카노</li>
+                  </ul>
+                </ul>
+              </div>
+            </li>
+  
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">RESPONSIBILITY</a>
+              <div class="item___contents">
+                <ul class="inner">
+                  </ul>
+              </div>
+            </li>
+  
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">Starbucks Rewards</a>
+              <div class="item___contents">
+                  <ul class="inner">
+
+                  </ul>
+              </div>
+            </li>
+  
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">CORPORATE SALES</a>
+              <div class="item___contents">
+                <ul class="inner">
+
+                </ul>
+              </div>
+            </li>
+  
+            <li class="item">
+              <a href="javascript:void(0)" class="item___name">WHAT'S NEW</a>
+              <div class="item___contents">
+                <ul class="inner">
+
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </div>
+
+      <!-- 전역 배치(고정 배너) 만들기 -->
+    <div class="badges">
+      
+      <div class="badge">
+        <img src="./images/badge1.jpg" alt="Badge">
+      </div>
+
+      <div class="badge">
+        <img src="./images/badge2.jpg" alt="Badge">
+      </div>      
     </div>
   </header>
-</body>
+
+  <!-- VISUAL -->
+  <section class="VISUAL">
+      <div class="inner fade-in">
+        <div class="title">
+          
+          <img src="./images/visual_title.png" alt="">
+          <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>
+          </div class="fade-in">
+          <img src="./images/visual_cup1.png" alt="" class="cup1 image">
+          <img src="./images/visual_cup1_text.png" alt="" class="cup1 text">
+      
+          <div class="fade-in">
+          <img src="./images/visual_cup2.png" alt="" class="cup2 image">
+          <img src="./images/visual_cup2_text.png" alt=""class="cup2 text">
+          </div>
+      
+          <div class="fade-in">
+          <img src="./images/visual_spoon.png" alt="" class="spoon">
+          </div>
+      </div>
+    </section>
+
+      <!-- NOTICE -->
+      <section class="NOTICE">
+      <div class="bg-left"></div>
+      <div class="bg-right"></div>
+      <div class="inner">
+      <div class="inner___left">
+      <h2>공지사항</h2>
+      <!-- div.swiper: 공지사항이 슬라이드 될 영역, 슬라이드 라이브러리 사용! -->
+      <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">[당첨자 발표] 스타벅스 플래너 영수증 이벤트</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">스타벅스 애플리케이션 버전 업데이트 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+            </div>
+          </div>
+      </div>
+        <a href="javascript:void(0)" class="notice-more">
+          <span class="material-icons">add_circle</span>
+        </a>
+      </div>
+      <div class="inner__right">
+
+      </div>
+        </div>
+      </section>
+  </body>
 </html>
