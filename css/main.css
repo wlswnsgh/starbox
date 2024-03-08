@@ -228,7 +228,7 @@ header .main-menu {
 
 }
 
-header .main-menu .item .item___name {
+header .main-menu .item .item__name {
   display: block; /* 상하 여백 적용을 위해 변경 */
   padding: 10px 20px 34px;
   font-family: Arial, sans-serif;
@@ -236,13 +236,13 @@ header .main-menu .item .item___name {
   color: #333;
 }
 
-header .main-menu .item:hover .item___name {
+header .main-menu .item:hover .item__name {
   background-color: #2c2a29;
   color: #669900;
   border-radius: 6px 6px 0 0; /* 최상단부터 시계 방향 적용 */
 }
 
-header .main-menu .item .item___contents {
+header .main-menu .item .item__contents {
   background-color: #2c2a29;
   position: fixed;
   width: 100px;
@@ -250,34 +250,34 @@ header .main-menu .item .item___contents {
   display: none;
 }
 
-header .main-menu .item:hover .item___contents {
+header .main-menu .item:hover .item__contents {
   display: block;
 }
 
-header .main-menu .item .item___contents > ul {
+header .main-menu .item .item__contents > ul {
   display: flex;
   padding: 20px 0;
 }
 
-header .main-menu .item .item___contents > ul > li{
+header .main-menu .item .item__contents > ul > li{
   /* 상세 메뉴 가로 너비를 통일 */
   width: 220px;
 }
 
-header .main-menu .item .item___contents > ul > li h4{
+header .main-menu .item .item__contents > ul > li h4{
   padding: 3px 0 12px;
   font-size: 14px;
   color: #fff;
 }
 
-header .main-menu .item .item___contents > ul > li ul li{
+header .main-menu .item .item__contents > ul > li ul li{
   padding: 5px 0;
   font-size: 12px;
   color: #999;
   cursor: pointer;
 }
 
-header .main-menu .item .item___contents > ul > li ul li:hover{
+header .main-menu .item .item__contents > ul > li ul li:hover{
   color: #669900;
 }
 
@@ -366,19 +366,21 @@ header .badges .badge {
   opacity: 0;
 }
 
-/* NOTICE */
-.NOTICE {
+/* notice */
+.notice {
   position: relative;
 }
 
-.NOTICE .bg-left {
+.notice .bg-left {
   width: 50%;
   height: 100%;
   background-color: #333;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.NOTICE .bg-right {
+.notice .bg-right {
   width: 50%;
   height: 100%;
   background-color: #f6f5ef;
@@ -387,13 +389,12 @@ header .badges .badge {
   right: 0;
 }
 
-.NOTICE .inner {
+.notice .inner {
   height: 62px;
-  /* border: 2px solid red;   */
   display: flex;
 }
 
-.NOTICE .inner___left{
+.notice .inner__left{
   /* 방법1. %를 사용하여 비율 나누기 */
   /* width: 70%; */
   /* 방법2. flex를 사용하여 비율 나누기 */
@@ -403,52 +404,339 @@ header .badges .badge {
   align-items: center;
 }
 
-.NOTICE .inner___left h2{
+.notice .inner__left h2{
   color: #fff;
   font-size: 17px;
   font-weight: 700;
   margin-right: 20px;
 }
 
-/* .NOTICE .inner___left .swiper{
-  background-color: orange;
+.notice .inner__left .swiper{
+  /* background-color: orange; */
   height: 62px;
-  flex-grow: 1; /* 최대한 늘어나도록 지정, flex: 1; 올 써도
-  같은 결과
-} */
+  flex-grow: 1; /* 최대한 늘어나도록 지정, flex: 1; 올 써도 같은 결과 */
 
-.NOTICE .inner___left .swiper .swiper-slide{
+}
+
+.notice .inner__left .swiper .swiper-slide{
   display: flex;
   align-items: center;
 }
 
-.NOTICE .inner___left .swiper .swiper-slide a{
-  color: red;
+.notice .inner__left .swiper .swiper-slide a{
+  color: #fff;
 }
 
-.NOTICE .inner___left .notice-more {
-  width: 62;
+.notice .inner__left .notice-more {
+  width: 62px;
   height: 62px;
-
-  /* Quiz: 정중앙 정렬(2) */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.NOTICE .inner___left .notice-more .material-icons {
-  /* 정중앙 정렬(1) 
-    line-height: 62px;
+  /* Quiz: 정중앙 정렬(1) 
+    text-align: center;
   */
+   
+  /* Quiz: 정중앙 정렬(2) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice .inner__left .notice-more .material-icons {
+   /* 정중앙 정렬(1) 
+    line-height: 62px; */
 
   /* 아이콘은 글자 관련 속성이 적용됨 */
   color: #fff;
   font-size: 30px;
 }
 
-.NOTICE .inner___right{
+.notice .inner__right{
   /* 방법1. %를 사용하여 비율 나누기 */
   /* width: 30%; */
   /* 방법2. flex를 사용하여 비율 나누기 */
   flex: 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.notice .inner__right h2{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.notice .inner__right .tpggle-promotion{
+  width: 62;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.notice .inner__right .toggle-promotion .material-icons{
+  font-size: 30px;
+}
+
+/* PROMOTION */
+.promotion {
+  height: 663px;
+  background-color: #f6f5ef;
+  display: flex;
+  justify-content: center;  /* 슬라이드 수평 가운데 정렬 */
+  position: relative; /* 페이지네이션 요소를 위해 */
+  overflow: hidden;
+  transition: height 0.4s;
+}
+
+.promotion.hide{
+  height: 0;
+  /* display: none; */
+}
+
+.promotion .swiper {
+  /* 이미지(819px) 슬라이드 3개 + 사이 여백(10px) 2개 = 2477px */
+  width: calc(819px * 3 + 10px * 2); /*calc: 계산기 명령어*/
+  
+  /* 활용 예시: width: salc(100% - 120px) */
+  height: 553px;
+
+  /* Flex ITEM .swiper가 2477px을 유지하기 위해 감소 너비 비율을 0으로 */
+  flex-shrink: 0;
+}
+
+.promotion .swiper-slide {
+  /* 모든 슬라이드를 반투명하게, active 한 것만 불투명하기 */
+  opacity: 0.5;
+  transition: opacity 1s;
+  position: relative;
+}
+
+.promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.promotion .swiper-slide .btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.promotion .swiper-pagination{
+  position: absolute; /* absolute를 안넣어도 관리자창을 보면 자동으로 들어가 있다.*/
+  bottom: 40px;
+  /* 헤더의 z-index가 9이기 때문에 1로 덮어씌움 
+    아니면 헤더를 10보다 크게 해도 됨 */
+  z-index: 1;
+}
+
+.promotion .swiper-pagination .swiper-pagination-bullet{
+  /* 기준 배경색은 투명하게 숨기고, 배경 이미지를 사용 */
+  background-color: transparent;
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 13px;
+  height: 12px;
+}
+
+.promotion .swiper-pagination .swiper-pagination-bullet-active{
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+
+.promotion .swiper-button-prev,
+.promotion .swiper-button-next{
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  color: #333;
+  transition: 0.4s;
+}
+
+.promotion .swiper-button-prev{
+  /* 가운데로 몰아넣고 마진으로 위치 조정 */
+  left: 50%;
+  margin-left: -480px;
+}
+
+.promotion .swiper-button-next{
+  /* 가운데로 몰아넣고 마진으로 위치 조정 */
+  right: 50%;
+  margin-right: -480px;
+}
+
+.promotion .swiper-button-next:hover,
+.promotion .swiper-button-prev:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+.promotion .swiper-button-next::after,
+.promotion .swiper-button-prev::after{
+  display: none;
+}
+
+/* REWARDS */
+.rewards {
+  /* absolute 요소 배치를 위해 부모에 위치 기준 */
+  position: relative;
+}
+
+.rewards .bg-left { 
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rewards .bg-right { 
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.rewards .inner {
+  height: 241px;
+  background-image: url("../images/rewards.jpg");
+}
+
+.rewards .btn-group {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  /* 버튼 하나의 크기가 130px */
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+}
+
+.rewards .btn-group .btn.sign-up{
+  margin-right: 10px;
+}
+
+.rewards .btn-group .btn.sign-in{
+  width: 110px;
+}
+
+.rewards .btn-group .btn.gift{
+  /* Flex Containner 내부에서 최대한의 너비를 쓸 수 있도록 */
+  /* flew-grow:1 */
+  flex: 1;
+  margin-top: 10px;
+}
+
+/* YOUTUBE  */
+.youtube{
+  position: relative; /* 부모에 위치 기준*/
+  height: 700px;
+  background-color: #333;
+  overflow: hidden;
+
+  
+  /* 정가운데 정렬 배치방법 3가지 */
+
+  /* 첫번째 방법1
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.youtube .youtube__area {
+  /* 유튜브의 표준 영상 비율 16:9 */
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  /* 두번째 방법
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; */
+
+  /* 세번째 방법 
+  부모의 50% 위치에 배치하고 margin을 이용하여 정가운데로 옮기기
+  */
+  left: 50%;
+  top: 50%;
+
+  /* 가로 너비의 절반만큼 땡겨오기 */
+  /* margin-left: calc(1920px / -2); */
+  /* 세로 너비의 절반만큼 땡겨오기 */
+  /* margin-top: calc(1080px / -2); */
+
+  /* 중복 스타일 변수로 선언 */
+  /* 너비, 높이를 수정할 경우 4곳 수정 필요 => css 변수 선언으로 재사용
+    2개의 대시(--)기호로 시작하고 원하는 변수명 지정: css 값
+    선언된 변수는 css var() 함수를 통해 사용
+
+    활용 예: 주로 색상 지정 시 사용
+  */
+  /* 주의! 자신이 선언된 선택자와 그 하위 요소에서만 유호
+    전역 변수로 사용하고 싶으면,
+    html{
+      --error: red;
+    }
+    또는
+    :root{
+      --error: red;
+    }
+  */
+  --width: 1920px;
+  --height: 1080px;
+  /* width: var(--width);
+  height: var(--height); */
+
+  margin-left: calc(var(--width) / -2);
+  margin-top: calc(var(--height) / -2);
+
+}
+
+#player{
+  /* 부모 영역에 가득 차도록 지정 */
+  width: 100%;
+  height: 100%;
+}
+
+.youtube .youtube__cover {
+  /* TIP! 화면 전체 영역 덮기 */
+  /* position: fixed; */
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-image: url("../images/video_cover_pattern.png");
+}
+
+.youtube .inner {
+  height: 100%;
+}
+
+.youtube .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.youtube .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+
+.youtube .floating3 {
+  position: absolute;
+  bottom: -200px;
+  right: 0;
 }
