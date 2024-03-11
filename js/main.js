@@ -146,14 +146,15 @@ gsap.to('.floating1', 1.5, {
   y: 60, //수직으로 얼마나 움직일지 설정, transform: translateY(수치);와 같음
   repeat: -1, // 몇 번 반복할지 설정, -1은 무한 반복
   yoyo: true, // 한 번 재생된 애니메이션을 다시 뒤로 재생
-  ease: power1.easeInout// 타이밍 함수 적용, 느리게-빠르게-느리게
+  ease: Power1.easeInout// 타이밍 함수 적용, 느리게-빠르게-느리게
 });
+
 gsap.to('.floating2', 10,{
   delay: 0.5, // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
   x: 35, //수직으로 얼마나 움직일지 설정, transform: translateY(수치);와 같음
   repeat: -1, // 몇 번 반복할지 설정, -1은 무한 반복
   yoyo: true, // 한 번 재생된 애니메이션을 다시 뒤로 재생
-  ease: power1.easeInout// 타이밍 함수 적용, 느리게-빠르게-느리게
+  ease: Power1.easeInout// 타이밍 함수 적용, 느리게-빠르게-느리게
 });
 
 gsap.to('.floating3', 10,{
@@ -161,5 +162,19 @@ gsap.to('.floating3', 10,{
   y: 20, //수직으로 얼마나 움직일지 설정, transform: translateY(수치);와 같음
   repeat: -1, // 몇 번 반복할지 설정, -1은 무한 반복
   yoyo: true, // 한 번 재생된 애니메이션을 다시 뒤로 재생
-  ease: power1.easeInout// 타이밍 함수 적용, 느리게-빠르게-느리게
+  ease: Power1.easeInout// 타이밍 함수 적용, 느리게-빠르게-느리게
+});
+
+// ScrollMagic 사용
+// 그 외 scrollreveal
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function(spyEl) {
+  new ScrollMagic.Scene({ //감시할 장면(Scene) 추가 및 옵션 지정
+    triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정
+    triggerHook: 0.8 //화면의 80% 지점ㅇ에서 보여짐 여부 감시(0~1사이 지정)
+  })
+  .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
+  .addTo(new ScrollMagic.Controller()); //컨트롤러에 장명을 할당 (필수!)
+  // 라이브러리에서 지정한 문법으로 깊게 이해X
+  
 });
