@@ -26,6 +26,14 @@ searchInputEl.addEventListener('blur', function () {
 
 // 스크롤 시 전역 배치(고정 배너) 숨기기
 const badgeEl = document.querySelector('header .badges');
+// 페이지 최상단으로 이동
+const toTopEl = document.querySelector('#to-top');
+toTopEl.addEventListener('click', function() {
+  gsap.to(window, 0.6, {
+    scrollTo:0 //페이지의 0px 지점(최상단)으로 이동,
+    // ScrollTopPlugin을 연결해야 사용 가능한 옵션
+  });
+});
 
 // 페이지에 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체
@@ -45,9 +53,14 @@ window.addEventListener('scroll', function() {
   
   
     // gsap.to(요소, 지속시간, 옵션: {}) 메소드: CSS 속성을 통해 애니메이션 처리
-    gsap.to(badgeEl, 0.6, {
+    gsap.to(badgeEl, 0.4, {
       opacity: 0,
-      display: 'none'
+      x: 0
+    });
+    
+    gsap.to(toTopEl, 0.4, {
+      opacity: 1,
+      x: 0
     });
   
   } else {
@@ -59,7 +72,14 @@ window.addEventListener('scroll', function() {
       display: 'block'
     });
 
+    gsap.to(toTopEl, 0.6, {
+      opacity: 0,
+      x: 100 //x축 100px 지점으로 이동
+    });
+
   }
+
+  
 
 });
 
@@ -199,3 +219,6 @@ new Swiper('.awards .swiper', {
 // 현재 연도 표시
 // 날씨 정보를 가진 JS Date 객체를 활용(JS 기본 제공 객체: 여러 데이터들의 묶음)
 new Date().getFullYear(); //현재 연도의 정보가 숫자 데이터로 반환됨
+
+const date = document.querySelector('.this-year');
+date.textContent=new Date().getFullYear();
