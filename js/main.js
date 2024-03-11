@@ -178,3 +178,24 @@ spyEls.forEach(function(spyEl) {
   // 라이브러리에서 지정한 문법으로 깊게 이해X
   
 });
+
+// 어워즈 섹션 슬라이드 기능
+new Swiper('.awards .swiper', {
+  
+  // Optional parameters
+  direction: 'horizontal', // 수평 슬라이드
+  loop: true, // 반복 재생 여부, 1 -> 2 -> 3 -> 4 -> 다시 1
+  autoplay: true, 
+  slidesPerView: 5,
+  spaceBetween: 30,
+
+  navigation: { // 슬라이드 이전/다음 버튼 사용
+    nextEl: '.awards .swiper-button-next',
+    prevEl: '.awards .swiper-button-prev',
+  },
+
+});
+
+// 현재 연도 표시
+// 날씨 정보를 가진 JS Date 객체를 활용(JS 기본 제공 객체: 여러 데이터들의 묶음)
+new Date().getFullYear(); //현재 연도의 정보가 숫자 데이터로 반환됨

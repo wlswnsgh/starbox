@@ -973,3 +973,135 @@ header .badges .badge {
 .find-store .text-group .description{
   margin-bottom: 20px;
 }
+
+/* .footer .footer_menu .ft_mn{
+  display: flex;
+} */
+
+.awards{
+  background-color: #272727;
+
+}
+.awards .inner{
+  padding: 40px 0;
+}
+
+.awardss .swiper {
+  width: 100%;
+  height: 40px;
+}
+
+.awards .swiper-button-prev,
+.awards .swiper-button-next{
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0.3;
+  position: absolute;
+  transition: 0.4s;
+}
+
+.awards .swiper-button-prev {
+  left: -100px;
+}
+
+.awards .swiper-button-next{
+  right: -100px;
+}
+
+.awards .swiper-button-prev:hover,
+.awards .swiper-button-next:hover{
+  background-color: #fff;
+  color: #333;
+}
+
+.awards .swiper-button-prev::after,
+.awards .swiper-button-next::after{
+  display: none;
+}
+
+/* FOOTER */
+footer{
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+
+footer .inner {
+  padding: 40px 0 60px;
+}
+
+footer .menu {
+  display: flex;
+  justify-content: center;
+}
+
+/* footer .menu a{
+  content: "";
+  border-right: 1px solid #ccc;
+  padding: 1px 6px;
+} */
+
+footer .menu li{
+  position: relative;
+  
+}
+
+footer .menu li::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+footer .menu li:first-child:before {
+  display: none;
+}
+
+footer .menu li a{
+  display: block; /* 상하 여백 적용을 위해 */
+  padding: 12px;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+footer .menu li:nth-child(3n+1) a{
+  color: green;
+}
+
+footer .btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+footer .btn-group .btn{
+  margin-right: 10px;
+}
+
+/* 방법2: + 인접 형제 선택자 */
+/* footer .btn-group .btn + .btn{
+  margin-left: 10px;
+} */
+
+footer .info{
+  text-align: center;
+  color: #ccc;
+}
+
+footer .copyright{
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+}
+
+footer .logo{
+  margin: 0 auto;
+}
+
